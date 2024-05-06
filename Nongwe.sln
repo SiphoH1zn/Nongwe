@@ -11,7 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{746FB639-17B6-49C2-A02E-0D4CCBCC41BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nongwe.Services.CouponAPI", "Nongwe.Services.CouponAPI\Nongwe.Services.CouponAPI.csproj", "{B0E6254F-CB3E-48B7-A626-844EF9DF7199}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nongwe.Services.CouponAPI", "Nongwe.Services.CouponAPI\Nongwe.Services.CouponAPI.csproj", "{B0E6254F-CB3E-48B7-A626-844EF9DF7199}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nongwe.Web", "Nongwe.Web\Nongwe.Web.csproj", "{B78D9B6A-0E18-424B-929C-DA3A6F5FDB0A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +25,17 @@ Global
 		{B0E6254F-CB3E-48B7-A626-844EF9DF7199}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0E6254F-CB3E-48B7-A626-844EF9DF7199}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0E6254F-CB3E-48B7-A626-844EF9DF7199}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B78D9B6A-0E18-424B-929C-DA3A6F5FDB0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B78D9B6A-0E18-424B-929C-DA3A6F5FDB0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B78D9B6A-0E18-424B-929C-DA3A6F5FDB0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B78D9B6A-0E18-424B-929C-DA3A6F5FDB0A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B0E6254F-CB3E-48B7-A626-844EF9DF7199} = {746FB639-17B6-49C2-A02E-0D4CCBCC41BF}
+		{B78D9B6A-0E18-424B-929C-DA3A6F5FDB0A} = {CC7872C7-DA31-4EEB-BD5B-7794427BF8DD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4366AA8B-EF76-4F02-9B10-4BBA63CDBEE1}

@@ -7,7 +7,7 @@ using Nongwe.Services.CouponAPI.Models.Dto;
 
 namespace Nongwe.Services.CouponAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/coupon")]
     [ApiController]
     public class CouponAPI : ControllerBase
     {
@@ -112,6 +112,28 @@ namespace Nongwe.Services.CouponAPI.Controllers
                 _db.SaveChanges();
 
                 _response.Result = _mapper.Map<CouponDto>(coupon);
+            }
+
+            catch (Exception ex)
+            {
+                _response.IsSuccess = false;
+                _response.Message = ex.Message;
+            }
+
+            return _response;
+        }
+
+        [HttpDelete]
+        [Route("{id:int}")]
+        public ResponseDto DeleteCoupon(int id)
+        {
+            try
+            {
+                Coupon obj = _db.Coupons.First(u => u.CouponId == id);
+                _db.Coupons.Remove(obj);
+                _db.SaveChanges();
+
+                _response.Result = _mapper.Map<CouponDto>(obj);
             }
 
             catch (Exception ex)
