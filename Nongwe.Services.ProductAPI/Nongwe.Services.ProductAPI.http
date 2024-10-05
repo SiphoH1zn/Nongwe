@@ -1,0 +1,6 @@
+@Nongwe.Services.ProductAPI_HostAddress = http://localhost:5190
+
+GET {{Nongwe.Services.ProductAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

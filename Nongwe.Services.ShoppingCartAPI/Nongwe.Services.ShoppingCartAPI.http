@@ -1,0 +1,6 @@
+@Nongwe.Services.ShoppingCartAPI_HostAddress = http://localhost:5265
+
+GET {{Nongwe.Services.ShoppingCartAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

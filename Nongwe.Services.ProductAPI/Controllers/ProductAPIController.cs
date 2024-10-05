@@ -2,21 +2,20 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Nongwe.Services.CouponAPI.Data;
-using Nongwe.Services.CouponAPI.Models;
-using Nongwe.Services.CouponAPI.Models.Dto;
+using Nongwe.Services.ProductAPI.Data;
+using Nongwe.Services.ProductAPI.Models;
+using Nongwe.Services.ProductAPI.Models.Dto;
 
-namespace Nongwe.Services.CouponAPI.Controllers
+namespace Nongwe.Services.ProductAPI.Controllers
 {
-    [Route("api/coupon")]
+    [Route("api/product")]
     [ApiController]
-    //[Authorize]
-    public class CouponAPI : ControllerBase
+    public class ProductAPI : ControllerBase
     {
         private readonly ApplicationDbContext _db;
         private ResponseDto _response;
         private IMapper _mapper;
-        public CouponAPI(ApplicationDbContext db, ResponseDto response, IMapper mapper)
+        public ProductAPI(ApplicationDbContext db, ResponseDto response, IMapper mapper)
         {
             _db = db;
             _response = new ResponseDto();
@@ -24,12 +23,12 @@ namespace Nongwe.Services.CouponAPI.Controllers
         }
 
         [HttpGet]
-        public ResponseDto GetCoupons()
+        public ResponseDto GetProducts()
         {
             try
             {
-                IEnumerable<Coupon> obj = _db.Coupons.ToList();
-                _response.Result = _mapper.Map<IEnumerable<CouponDto>>(obj);
+                IEnumerable<Product> obj = _db.products.ToList();
+                _response.Result = _mapper.Map<IEnumerable<ProductDto>>(obj);
             }
 
             catch (Exception ex)
@@ -43,12 +42,12 @@ namespace Nongwe.Services.CouponAPI.Controllers
 
         [HttpGet]
         [Route("{id:int}")]
-        public ResponseDto GetCouponById(int id)
+        public ResponseDto GetProductById(int id)
         {
             try
             {
-                Coupon objList = _db.Coupons.First(c => c.CouponId == id);
-                _response.Result = _mapper.Map<CouponDto>(objList);
+                Product objList = _db.products.First(c => c.ProductId == id);
+                _response.Result = _mapper.Map<ProductDto>(objList);
             }
 
             catch (Exception ex)
@@ -61,17 +60,17 @@ namespace Nongwe.Services.CouponAPI.Controllers
         }
 
         [HttpGet]
-        [Route("GetCouponByCode/{code}")]
-        public ResponseDto GetCouponByCode(string code)
+        [Route("GetCouponByCode/{name}")]
+        public ResponseDto GetProductByName(string name)
         {
             try
             {
-                Coupon couponCode = _db.Coupons.FirstOrDefault(u => u.CouponCode.ToLower() == code.ToLower());
-                if (couponCode == null)
+                Product productName = _db.products.FirstOrDefault(u => u.ProductName.ToLower() == name.ToLower());
+                if (productName == null)
                 {
                     _response.IsSuccess = false;
                 }
-                _response.Result = _mapper.Map<CouponDto>(couponCode);
+                _response.Result = _mapper.Map<ProductDto>(productName);
             }
 
             catch (Exception ex)
@@ -85,15 +84,15 @@ namespace Nongwe.Services.CouponAPI.Controllers
 
         [HttpPost]
         [Authorize(Roles = "ADMIN")]
-        public ResponseDto CreateCoupon([FromBody] CouponDto couponDto)
+        public ResponseDto CreateProduct([FromBody] ProductDto productDto)
         {
             try
             {
-                Coupon coupon = _mapper.Map<Coupon>(couponDto);
-                _db.Coupons.Add(coupon);
+                Product product = _mapper.Map<Product>(productDto);
+                _db.products.Add(product);
                 _db.SaveChanges();
                
-                _response.Result = _mapper.Map<CouponDto>(coupon);
+                _response.Result = _mapper.Map<ProductDto>(product);
             }
 
             catch (Exception ex)
@@ -107,15 +106,15 @@ namespace Nongwe.Services.CouponAPI.Controllers
 
         [HttpPut]
         [Authorize(Roles = "ADMIN")]
-        public ResponseDto UpdateCoupon([FromBody] CouponDto couponDto)
+        public ResponseDto UpdateProduct([FromBody] ProductDto productDto)
         {
             try
             {
-                Coupon coupon = _mapper.Map<Coupon>(couponDto);
-                _db.Coupons.Update(coupon);
+                Product product = _mapper.Map<Product>(productDto);
+                _db.products.Update(product);
                 _db.SaveChanges();
 
-                _response.Result = _mapper.Map<CouponDto>(coupon);
+                _response.Result = _mapper.Map<ProductDto>(product);
             }
 
             catch (Exception ex)
@@ -134,11 +133,11 @@ namespace Nongwe.Services.CouponAPI.Controllers
         {
             try
             {
-                Coupon obj = _db.Coupons.First(u => u.CouponId == id);
-                _db.Coupons.Remove(obj);
+                Product obj = _db.products.First(u => u.ProductId == id);
+                _db.products.Remove(obj);
                 _db.SaveChanges();
 
-                _response.Result = _mapper.Map<CouponDto>(obj);
+                _response.Result = _mapper.Map<ProductDto>(obj);
             }
 
             catch (Exception ex)

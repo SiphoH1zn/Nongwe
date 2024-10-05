@@ -15,7 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nongwe.Services.CouponAPI",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nongwe.Web", "Nongwe.Web\Nongwe.Web.csproj", "{B78D9B6A-0E18-424B-929C-DA3A6F5FDB0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nongwe.Services.AuthAPI", "Nongwe.Services.AuthAPI\Nongwe.Services.AuthAPI.csproj", "{5FF4A76E-B8D8-47AC-99D2-286F9354097E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nongwe.Services.AuthAPI", "Nongwe.Services.AuthAPI\Nongwe.Services.AuthAPI.csproj", "{5FF4A76E-B8D8-47AC-99D2-286F9354097E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nongwe.Services.ProductAPI", "Nongwe.Services.ProductAPI\Nongwe.Services.ProductAPI.csproj", "{4B2CC7B9-A4D5-40FD-8262-6AFA0B7F7D54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nongwe.Services.ShoppingCartAPI", "Nongwe.Services.ShoppingCartAPI\Nongwe.Services.ShoppingCartAPI.csproj", "{541FD1DD-1481-4F53-A47D-B9E0AC9E7393}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +39,14 @@ Global
 		{5FF4A76E-B8D8-47AC-99D2-286F9354097E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FF4A76E-B8D8-47AC-99D2-286F9354097E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FF4A76E-B8D8-47AC-99D2-286F9354097E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B2CC7B9-A4D5-40FD-8262-6AFA0B7F7D54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B2CC7B9-A4D5-40FD-8262-6AFA0B7F7D54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B2CC7B9-A4D5-40FD-8262-6AFA0B7F7D54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B2CC7B9-A4D5-40FD-8262-6AFA0B7F7D54}.Release|Any CPU.Build.0 = Release|Any CPU
+		{541FD1DD-1481-4F53-A47D-B9E0AC9E7393}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{541FD1DD-1481-4F53-A47D-B9E0AC9E7393}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{541FD1DD-1481-4F53-A47D-B9E0AC9E7393}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{541FD1DD-1481-4F53-A47D-B9E0AC9E7393}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -43,6 +55,8 @@ Global
 		{B0E6254F-CB3E-48B7-A626-844EF9DF7199} = {746FB639-17B6-49C2-A02E-0D4CCBCC41BF}
 		{B78D9B6A-0E18-424B-929C-DA3A6F5FDB0A} = {CC7872C7-DA31-4EEB-BD5B-7794427BF8DD}
 		{5FF4A76E-B8D8-47AC-99D2-286F9354097E} = {746FB639-17B6-49C2-A02E-0D4CCBCC41BF}
+		{4B2CC7B9-A4D5-40FD-8262-6AFA0B7F7D54} = {746FB639-17B6-49C2-A02E-0D4CCBCC41BF}
+		{541FD1DD-1481-4F53-A47D-B9E0AC9E7393} = {746FB639-17B6-49C2-A02E-0D4CCBCC41BF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4366AA8B-EF76-4F02-9B10-4BBA63CDBEE1}
